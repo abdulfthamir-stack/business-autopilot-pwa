@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<h2>Daily Dashboard</h2>
+
+<input type="number" id="cash" placeholder="Cash Sales">
+<input type="number" id="credit" placeholder="Credit Given">
+
+<button onclick="saveData()">Save</button>
+
+<h3 id="result"></h3>
+
+<script>
+function saveData() {
+  let cash = document.getElementById('cash').value;
+  let credit = document.getElementById('credit').value;
+
+  localStorage.setItem('cash', cash);
+  localStorage.setItem('credit', credit);
+
+  document.getElementById('result').innerText =
+    "Saved: Cash " + cash + " | Credit " + credit;
+}
+</script>
+
+</body>
+</html>
